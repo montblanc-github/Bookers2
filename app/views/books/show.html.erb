@@ -1,13 +1,22 @@
 <div class="container">
   <div class="row">
-    <%= render partial: 'layouts/information', locals: { user: @user, book: @book} %>
+    <%= render partial: 'layouts/information', locals: { user: @user, book: @book_new} %>
     <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
       <table class="table">
         <tbody>
-          <tr>
-            <th></th>
-          </tr>
+            <tr>
+              <td>
+                <%= link_to user_path(@user.id) do %>
+                  <%= attachment_image_tag @book.user.profile_image, :profile_image, fallback: "no_image_icon.jpg" %></br>
+                  <%= @user.name %>
+                <% end %>
+              </td>
+              <td><%= link_to @book.title, book_path %></td>
+              <td><%= @book.body %></td>
+              <td><%= link_to "Edit", edit_book_path(@book.id), class: "btn btn-sm btn-success" %></td>
+              <td><%= link_to "Destroy", book_path, method: :delete, class: "btn btn-sm btn-danger" %></td>
+            </tr>
         </tbody>
       </table>
     </div>
