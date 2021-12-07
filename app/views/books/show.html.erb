@@ -1,2 +1,15 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <%= render partial: 'layouts/information', locals: { user: @user, book: @book} %>
+    <div class="col-md-8 offset-md-1">
+      <h2>Book detail</h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th></th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
