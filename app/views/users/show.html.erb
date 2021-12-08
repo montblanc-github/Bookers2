@@ -16,7 +16,9 @@
         <tbody>
           <tr>
             <td>
-              <%= attachment_image_tag book.user, :profile_image, :fill, 50, 50, fallback: "no_image_icon.jpg" %>
+              <%= link_to user_path(book.user.id) do %>
+                <%= attachment_image_tag book.user, :profile_image, :fill, 50, 50, fallback: "no_image_icon.jpg" %>
+              <% end %>
             </td>
             <td><%= link_to book.title, book %></td>
             <td><%= book.body %></td>
