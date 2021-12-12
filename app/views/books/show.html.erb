@@ -1,6 +1,14 @@
 <div class="container">
   <div class="row">
-    <%= render partial: 'layouts/information', locals: { user: @user, book: @book_new} %>
+    <div class="col-md-3">
+      <%= render 'layouts/information', user: @user %>
+    <% if @user == current_user %>
+      <%= render 'layouts/edit', user: @user %>
+    <% else %>
+      <%= render 'relationships/followbtn', user: @user %>
+    <% end %>
+      <%= render 'layouts/form', book: @book %>
+    </div>
     <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
       <table class="table">
