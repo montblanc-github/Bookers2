@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get "followers" => "relationships#followers", as: "followers"
   end
   get "/home/about" =>"homes#about"
+  get '/search', to: 'searches#search'
   root to: "homes#top"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
