@@ -11,13 +11,13 @@
   <% end %>
   <div class="row">
     <div class="col-md-3">
-      <%= render 'layouts/information', user: @current_user %>
+      <%= render "layouts/information", user: @current_user %>
     <% if @current_user == current_user %>
-      <%= render 'layouts/edit', user: @current_user %>
+      <%= render "layouts/edit", user: @current_user %>
     <% else %>
-      <%= render 'relationships/followbtn', user: @current_user %>
+      <%= render "relationships/followbtn", user: @current_user %>
     <% end %>
-      <%= render 'layouts/form', book: @book %>
+      <%= render "layouts/form", book: @book %>
     </div>
     <div class="col-md-8 offset-md-1">
       <h2>Books</h2>
