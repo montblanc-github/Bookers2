@@ -3,4 +3,6 @@ DMM WEBCAMPの学習コンテンツアプリケーションを完成させよう
 ## 使用ツール
 Cloud9
 ## 使用言語
-HTML・CSS・Ruby・Ruby on Rails・Bootstrap4.5
+HTML・CSS・Ruby・Ruby on Rails・Bootstrap4.5・JavaScript・Ajax
+## 学習内容
+非同期通信
