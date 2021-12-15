@@ -30,7 +30,7 @@
             <td>フォロワー数: <%= user.followers.count %></td>
             <td>
               <% if user != current_user %>
-                <%= render partial: "relationships/followbtn", locals: {user: user, is_room: @is_room, room_id: @room_id, room: @room, entry: @entry} %>
+                <%= render partial: "relationships/followbtn", locals: {user: user, is_room: @is_room, room_id: @room_id, room: @room} %>
               <% end %>
             </td>
             <td><%= link_to "Show", user %></td>

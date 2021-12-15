@@ -15,7 +15,7 @@
     <% if @current_user == current_user %>
       <%= render "layouts/edit", user: @current_user %>
     <% else %>
-      <%= render "relationships/followbtn", user: @current_user %>
+      <%= render partial: "relationships/followbtn", locals: {user: user, is_room: @is_room, room_id: @room_id, room: @room} %>
     <% end %>
       <%= render "layouts/form", book: @book %>
     </div>

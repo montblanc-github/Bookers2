@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get "followers" => "relationships#followers", as: "followers"
   end
   resources :messages, only: [:create]
-  resources :rooms, only: [:create, :show, :index]
+  resources :rooms, only: [:create, :show]
   get "/home/about" =>"homes#about"
   get '/search', to: 'searches#search'
   root to: "homes#top"
