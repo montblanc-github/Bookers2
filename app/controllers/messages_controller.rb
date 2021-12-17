@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :authenticate_user!, :only => [:create]
+  before_action :follow_each_other, :only => [:show]
 
   def show
     @user = User.find(params[:id])
@@ -22,13 +22,19 @@ class MessagesController < ApplicationController
   def create
     @message = current_user.messages.new(message_params)
     @message.save
-    redirect_to request.referer
   end
 
   private
 
   def message_params
     params.require(:message).permit(:content, :room_id)
+  end
+
+  def follow_each_other
+    user = User.find(params[:id])
+    unless current_user.following?(user) && user.following?(current_user)
+      redirect_to books_path
+    end
   end
 
 end

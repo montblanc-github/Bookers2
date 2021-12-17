@@ -3,36 +3,34 @@
     <div class="col">
       <h1><%= @user.name %> さんとのチャット</h1>
 
-      <table id="message_table">
-        <thead>
-          <th></th>
-          <th></th>
-        </thead>
-        <% @messages.each do |m| %>
-          <% if m.user_id == current_user.id %>
-          <tbody>
-            <tr>
-              <th style="font-weight:normal; word-break: break-all;">
-                <%= m.content %>
-              </th>
-              <td></td>
-            </tr>
-          <% else %>
-            <tr>
-              <th></th>
-              <td style="word-break: break-all;">
-                <%= m.content %>
-              </td>
-            </tr>
-          </tbody>
+      <div class="message_index">
+        <table id="message_table">
+          <thead>
+            <th></th>
+            <th></th>
+          </thead>
+          <% @messages.each do |message| %>
+            <% if message.user_id == current_user.id %>
+            <tbody>
+              <tr>
+                <th style='font-weight:normal; word-break: break-all;'><%= message.content %></th>
+                <td></td>
+              </tr>
+            <% else %>
+              <tr>
+                <th></th>
+                <td style="word-break: break-all;"><%= message.content %></td>
+              </tr>
+            </tbody>
+            <% end %>
           <% end %>
-        <% end %>
-      </table>
+        </table>
+      </div>
 
-      <%= form_with model: @message, local: true do |f| %>
+
+      <%= form_with model: @message, data: {remote: true} do |f| %>
         <%= f.text_field :content %>
-        <%= f.hidden_field :room_id, :value => @room.id %>
-        <%= f.submit style: "display:none"%>
+        <%= f.hidden_field :room_id %>
       <% end %>
     </div>
   </div>
