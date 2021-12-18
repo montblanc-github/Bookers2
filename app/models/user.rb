@@ -17,6 +17,7 @@ class User < ApplicationRecord
   has_many :book_comments, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy
+  has_many :view_counts, dependent: :destroy
 
   attachment :profile_image
 
