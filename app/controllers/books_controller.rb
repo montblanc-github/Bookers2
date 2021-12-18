@@ -1,7 +1,6 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
-  impressionist :actions=> [:show]
 
   def create
     @book = Book.new(book_params)
@@ -24,6 +23,9 @@ class BooksController < ApplicationController
   def show
     @book_new = Book.new
     @book = Book.find(params[:id])
+    unless ViewCount.find_by(user_id: current_user.id, book_id: @book.id)
+      current_user.view_counts.create(book_id: @book.id)
+    end
     @book_comment = BookComment.new
     @book_comments = @book.book_comments
     @user = User.find(@book.user.id)
