@@ -33,7 +33,7 @@
         </tbody>
       </table>
       <div id="comments_area"><%= render "books/comments", book: @book %></div>
-      <%= render partial: "books/comment-form", locals: {book: @book, book_comment: @book_comment} %>
+      <%= render "books/comment-form", book: @book, book_comment: @book_comment %>
     </div>
   </div>
 </div>
