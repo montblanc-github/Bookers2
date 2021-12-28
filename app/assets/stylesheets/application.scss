@@ -33,8 +33,10 @@
   color: red;
 }
 
-div.field, div.actions{
-  margin-bottom: 10px;
+div{
+  &.field, &.actions{
+    margin-bottom: 10px;
+  }
 }
 
 .btn {
