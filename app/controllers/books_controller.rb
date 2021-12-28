@@ -15,7 +15,7 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.includes(:favorited_users).sort { |a, b| b.favorited_users.size <=> a.favorited_users.size }
+    @books = Book.left_joins(:week_favorites).group(:id).order(Arel.sql('count(book_id) desc'))
     @book = Book.new
   end
 
