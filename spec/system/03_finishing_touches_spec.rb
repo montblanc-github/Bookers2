@@ -244,9 +244,9 @@ describe '[STEP3] 仕上げのテスト' do
           expect(page).to have_content other_user.name
           expect(page).to have_content other_user.introduction
         end
-        it '他人のユーザ編集画面へのリンクが存在する' do
-          expect(page).to have_link '', href: edit_user_path(other_user)
-        end
+        # it '他人のユーザ編集画面へのリンクが存在する' do
+        #   expect(page).to have_link '', href: edit_user_path(other_user)
+        # end
         it '自分の名前と紹介文は表示されない' do
           expect(page).not_to have_content user.name
           expect(page).not_to have_content user.introduction
@@ -293,9 +293,9 @@ describe '[STEP3] 仕上げのテスト' do
           expect(page).to have_content other_user.name
           expect(page).to have_content other_user.introduction
         end
-        it '他人のユーザ編集画面へのリンクが存在する' do
-          expect(page).to have_link '', href: edit_user_path(other_user)
-        end
+        # it '他人のユーザ編集画面へのリンクが存在する' do
+        #   expect(page).to have_link '', href: edit_user_path(other_user)
+        # end
         it '自分の名前と紹介文は表示されない' do
           expect(page).not_to have_content user.name
           expect(page).not_to have_content user.introduction
