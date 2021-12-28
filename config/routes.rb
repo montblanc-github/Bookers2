@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get "message/:id", to: "messages#show", as: "message"
   resources :messages, only: [:create]
-  get "/home/about" =>"homes#about"
+  get "/home/about" => "homes#about"
   get '/search', to: 'searches#search'
   root to: "homes#top"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

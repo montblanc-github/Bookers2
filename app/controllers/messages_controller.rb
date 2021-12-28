@@ -7,12 +7,12 @@ class MessagesController < ApplicationController
     entries = Entry.find_by(user_id: @user.id, room_id: rooms)
 
     if entries.nil?
-     @room = Room.new
-     @room.save
-     Entry.create(user_id: @user.id, room_id: @room.id)
-     Entry.create(user_id: current_user.id, room_id: @room.id)
+      @room = Room.new
+      @room.save
+      Entry.create(user_id: @user.id, room_id: @room.id)
+      Entry.create(user_id: current_user.id, room_id: @room.id)
     else
-     @room = entries.room
+      @room = entries.room
     end
 
     @messages = @room.messages
@@ -36,5 +36,4 @@ class MessagesController < ApplicationController
       redirect_to books_path
     end
   end
-
 end

@@ -15,7 +15,7 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.includes(:favorited_users).sort {|a,b| b.favorited_users.size <=> a.favorited_users.size}
+    @books = Book.includes(:favorited_users).sort { |a, b| b.favorited_users.size <=> a.favorited_users.size }
     @book = Book.new
   end
 
@@ -42,10 +42,10 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
-  	  flash[:notice] = "You have updated book successfully."
-  	  redirect_to book_path(@book.id)
+      flash[:notice] = "You have updated book successfully."
+      redirect_to book_path(@book.id)
     else
-	    render :edit
+      render :edit
     end
   end
 
@@ -55,7 +55,7 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
 
-private
+  private
 
   def book_params
     params.require(:book).permit(:title, :body)
@@ -67,5 +67,4 @@ private
       redirect_to books_path
     end
   end
-
 end
