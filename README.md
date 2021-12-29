@@ -12,9 +12,6 @@ Cloud9
 - Bootstrap 4.6
 - RSpec
 
-##使い方
-Ruby on Railsを用いているため、
-
 ## 機能一覧
 - ユーザー登録、ログイン機能(devise)
 - 画像投稿機能(refile)
