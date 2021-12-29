@@ -2,6 +2,7 @@
 DMM WEBCAMPの学習コンテンツアプリケーションを完成させよう2の研修課題です。
 
 ## イメージ
+![スクリーンショット (7)](https://user-images.githubusercontent.com/86041660/147623862-01b71e01-4867-4875-8ca7-9d474ba6161e.png)
 
 ## 使用ツール
 Cloud9
