@@ -2,7 +2,18 @@
 DMM WEBCAMPの学習コンテンツアプリケーションを完成させよう2の研修課題です。
 
 ## イメージ
-![スクリーンショット (7)](https://user-images.githubusercontent.com/86041660/147623862-01b71e01-4867-4875-8ca7-9d474ba6161e.png)
+**↓ホーム画面**
+
+![ホーム画面](https://user-images.githubusercontent.com/86041660/147623862-01b71e01-4867-4875-8ca7-9d474ba6161e.png)
+
+**↓ログイン画面**
+
+![ログイン画面](https://user-images.githubusercontent.com/86041660/147848041-e0a652cc-f4c0-40b6-87a9-6141ad9bad07.png)
+
+**↓ユーザー一覧画面**
+　※すべて、実在しない仮のユーザー名です。
+
+![ユーザー一覧画面](https://user-images.githubusercontent.com/86041660/147848061-170e2451-51fc-44dc-92d2-74d8068a8160.png)
 
 ## 使用ツール
 Cloud9
@@ -24,7 +35,7 @@ Cloud9
 - DM機能
 - 閲覧数表示
 
-##テスト
+## テスト
 - Rspec
   - 単体テスト(models)
   - 結合テスト(system)
