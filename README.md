@@ -56,7 +56,7 @@ Cloud9
 - 検索機能(ransack)
 - DM機能
 - 閲覧数表示
-- 投稿数表示
+- 投稿数表示(chat.js)
 
 ## テスト
 - Rspec
