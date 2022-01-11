@@ -43,6 +43,17 @@
         </tbody>
         <% end %>
       </table>
+
+      <%= form_with url: user_search_path(@user), method: :get do |f| %>
+        <%= f.date_field :created_at %>
+        <%= f.submit '検索', class: 'btn btn-primary'  %>
+      <% end %>
+      <div id="search_result">
+        <% if @search_book.present? %>
+          <%= render 'search', search_book: @search_book %>
+        <% end %>
+      </div>
+
       <h1>7日間分の投稿数</h1>
       <table class="table table-bordered">
         <thead>
