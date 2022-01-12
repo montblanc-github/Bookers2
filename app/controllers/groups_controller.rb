@@ -3,7 +3,6 @@ class GroupsController < ApplicationController
   before_action :ensure_correct_user, only: [:edit, :update]
 
   def index
-    @user = current_user
     @book = Book.new
     @groups = Group.all
   end
