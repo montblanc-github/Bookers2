@@ -30,6 +30,7 @@ class GroupsController < ApplicationController
   end
 
   def update
+    @group.owner_id = current_user.id
     if @group.update(group_params)
       redirect_to groups_path
     else
