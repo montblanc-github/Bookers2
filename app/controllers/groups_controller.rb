@@ -3,6 +3,7 @@ class GroupsController < ApplicationController
   before_action :ensure_correct_user, only: [:edit, :update]
 
   def index
+    @user = current_user
     @book = Book.new
     @groups = Group.all
   end
@@ -19,6 +20,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     @group.owner_id = current_user.id
+    binding.pry
     if @group.save
       redirect_to groups_path
     else
