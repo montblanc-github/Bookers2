@@ -6,7 +6,7 @@
       <%= render "layouts/edit", user: current_user %>
     <% else %>
     <div class="row">
-      <%= render partial: "relationships/followbtn", locals: {user: @user} %>
+      <%= render "relationships/followbtn", user: current_user %>
     </div>
     <% end %>
       <%= render "layouts/form", book: @book %>
