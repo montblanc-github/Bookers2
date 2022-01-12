@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get "search" => "users#search"
   end
 
+  resources :groups, except: [:destroy]
   get "message/:id", to: "messages#show", as: "message"
   resources :messages, only: [:create]
   get "/home/about" => "homes#about"
