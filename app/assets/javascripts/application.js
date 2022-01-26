@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery3
+//= require jquary
 //= require popper
 //= require bootstrap-sprockets
 //= require Chart.min
