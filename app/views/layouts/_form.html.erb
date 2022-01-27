@@ -21,9 +21,12 @@
 
 <script>
     $('#rating-form').raty({
+        size   : 36,
         starOn: "<%= asset_path('star-on.png') %>",
         starOff: "<%= asset_path('star-off.png') %>",
-        scoreName: 'book[rate]'
+        starHalf: "<%= asset_path('star-half.png') %>",
+        scoreName: 'book[rate]',
+        half: true,
     });
 </script>
 
