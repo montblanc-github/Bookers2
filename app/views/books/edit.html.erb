@@ -22,7 +22,7 @@
         <%= f.text_area :body, id: "book_body", class: "form-control"%>
       </div>
       <div class="form-group">
-        <div id="star-rate-<%= @book.id %>"></div>
+        <%= render "rate" , book: @book %>
       </div>
       <div class="form-group">
         <%= f.submit "Update Book", class: "btn btn-success" %>
@@ -34,15 +34,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  $('#star-rate-<%= @book.id %>').raty({
-    size: 20,
-    starOff:  '<%= asset_path('star-off.png') %>',
-    starOn : '<%= asset_path('star-on.png') %>',
-    starHalf: '<%= asset_path('star-half.png') %>',
-    half: true,
-    readOnly: true,
-    score: <%= @book.rate %>,
-  });
-</script>
