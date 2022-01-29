@@ -21,7 +21,7 @@ class BooksController < ApplicationController
     elsif params[:sort] == "2"
       @books = Book.all.order(rate: :desc)
     else
-      @books = Book.search(params[:keyword])
+      @books = Book.all
     end
 
     @book = Book.new
@@ -61,6 +61,10 @@ class BooksController < ApplicationController
     book = Book.find(params[:id])
     book.destroy
     redirect_to books_path
+  end
+
+  def search
+    @books = Book.search(params[:keyword])
   end
 
   private
