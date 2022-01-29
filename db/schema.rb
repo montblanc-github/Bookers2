@@ -21,10 +21,11 @@ ActiveRecord::Schema.define(version: 2022_01_12_111927) do
   end
 
   create_table "books", force: :cascade do |t|
-    t.text "title"
-    t.text "body"
-    t.integer "user_id"
-    t.float "rate"
+    t.text "title", null: false
+    t.text "body", null: false
+    t.integer "user_id", null: false
+    t.float "rate", null: false
+    t.string "category", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
