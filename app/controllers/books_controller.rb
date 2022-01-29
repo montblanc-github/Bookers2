@@ -21,7 +21,7 @@ class BooksController < ApplicationController
     elsif params[:sort] == "2"
       @books = Book.all.order(rate: :desc)
     else
-      @books = Book.all
+      @books = Book.search(params[:keyword])
     end
 
     @book = Book.new
@@ -66,7 +66,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :body, :rate)
+    params.require(:book).permit(:title, :body, :category, :rate)
   end
 
   def ensure_correct_user
