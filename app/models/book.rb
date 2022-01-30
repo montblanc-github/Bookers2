@@ -39,8 +39,8 @@ class Book < ApplicationRecord
   end
 
   def self.search(keyword)
-    return Book.all unless search
-    @book = Book.where("category LIKE?","%#{keyword}%")
+    return Book.all unless keyword
+    Book.where("category LIKE?","%#{keyword}%")
   end
 
 end
